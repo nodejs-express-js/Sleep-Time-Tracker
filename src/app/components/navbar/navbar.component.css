@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content:space-between;
+    padding:1rem;
+}
+.home{
+    font-size: 2rem;
+
+}
+.minicontainer{
+    display: flex;
+}
+.minicontainer>div{
+    margin-right: 1rem;
+}
