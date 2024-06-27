@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      sleeptimes.belongsTo(models.user, {
+        foreignKey: 'userId',
+        onDelete: 'CASCADE'
+      });
     }
   }
   sleeptimes.init({

@@ -11,10 +11,10 @@ import {SleeptimesService,sleepTimeType} from '../../services/sleeptimes.service
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+
 export class HomeComponent {
   sleeptimes:sleepTimeType[]=[]
 constructor(public sleeptimesservice:SleeptimesService){
- 
 }
 
 ngOnInit(){
