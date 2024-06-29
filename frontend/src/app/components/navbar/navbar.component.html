@@ -1,7 +1,13 @@
 <div class="container">
     <a class="home" routerLink="/">Sleep Tracker</a>
     <div class="minicontainer">
-        <a class="login" routerLink="/login">Login</a>
-        <a class="signup" routerLink="/signup">Signup</a>
+        <div *ngIf='user?.email===""'>
+            <a class="login" routerLink="/login">Login</a>
+            <a class="signup" routerLink="/signup">Signup</a>
+        </div>
+        <div *ngIf='user?.email!==""'>
+            <div>{{user.email}}</div>
+            <div>logout</div>
+        </div>
     </div>
 </div>
