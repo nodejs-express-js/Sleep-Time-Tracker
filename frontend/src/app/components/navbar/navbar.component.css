@@ -1,15 +1,20 @@
 .container{
     display: flex;
-    justify-content:space-between;
-    padding:1rem;
+    justify-content: space-between;
 }
 .home{
     font-size: 2rem;
-
+    cursor: pointer;
 }
-.minicontainer{
-    display: flex;
+.container>div{
+    padding:1rem;
 }
-.minicontainer>div{
-    margin-right: 1rem;
+.login{
+cursor: pointer;
+}
+.signup{
+    cursor: pointer;
+}
+.logout{
+    cursor: pointer;
 }

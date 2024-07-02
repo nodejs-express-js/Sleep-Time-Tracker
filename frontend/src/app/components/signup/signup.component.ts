@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })

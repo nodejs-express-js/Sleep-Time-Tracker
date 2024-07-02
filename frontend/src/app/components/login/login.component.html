@@ -1,18 +1,15 @@
-<app-navbar></app-navbar>
 <div>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="login()">
         <div>
-            <label>Email</label>
-            <input type="text" name="email" [(ngModel)]="email" >
+            <label for="email"></label>
+            <input type="text" name="email" [(ngModel)]="email">
         </div>
         <div>
-            <label>password</label>
-            <input type="password" name="password" [(ngModel)]="password" >
+            <label for="password"></label>
+            <input type="password" name="password" [(ngModel)]="password">
         </div>
         <div>
             <button type="submit">Login</button>
         </div>
-        {{error}}
     </form>
-    
 </div>

@@ -1,0 +1,12 @@
+<div>
+    <app-navbar></app-navbar>
+    <div *ngIf="sleeptimes.length>0;else emptysleeptime">
+        <div *ngFor="let sleeptime of sleeptimes">
+            <app-eachday [sleeptime]="sleeptime"></app-eachday>
+        </div>
+    </div>
+    <ng-template  #emptysleeptime>
+        Start Entering Data
+    </ng-template>
+    
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-export type loginType={
+export type userType={
   email:string,
   token:string,
   error:string,
@@ -10,11 +10,18 @@ export type loginType={
   providedIn: 'root'
 })
 export class UserService {
-  private userSource=new BehaviorSubject<loginType>({email:"",token:"",error:"",isloading : false});
-  userobservable=this.userSource.asObservable();
-  
-  setUsers(data:loginType){
-    this.userSource.next(data)
-  }
+  private userSource=new BehaviorSubject<userType>(
+    {email:"",token:"",error:"",isloading:false}
+  )
+  userObservable=this.userSource.asObservable();
+  constructor() { 
 
+  }
+  setUser(data:userType) {
+    this.userSource.next(data);
+  }
+  isAuthenticated():boolean {
+  const user=this.userSource.getValue()
+  return user.token!=="" && user.token!==undefined && user.token!==null;
+  }
 }
