@@ -25,13 +25,12 @@ constructor(userservice:UserService,http:HttpClient,router:Router){
   this.router=router;
 }
 login(){
-  console.log(this.email,this.password)
   const headers=new HttpHeaders()
   headers.set('Content-Type', 'application/json');
   this.userservice.setUser({email:"",token:"",error:"",isloading:true})
-  const response=this.http.post("http://localhost:8000/users/login",{email:this.email,password:this.password},{headers:headers})
+  const response=this.http.post<{email:string,token:string}>("http://localhost:8000/users/login",{email:this.email,password:this.password},{headers:headers})
   response.subscribe({
-    next:(data:any)=>{
+    next:(data)=>{
       this.userservice.setUser({email:data.email,token:data.token,error:"",isloading:false})
       this.router.navigate(['/']);
     },

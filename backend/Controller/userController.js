@@ -31,6 +31,10 @@ if(!name || !email || !password){
     throw  Error("Please enter a name, email and password")
 }
 const hashpassword=await signUpHelper(name,email,password)
+const existinguser=await db.user.findOne({where:{email:email}})
+if(existinguser){
+    throw new Error("email already exists")
+}
 const user=await db.user.create({name:name,email:email,password:hashpassword})
 const token=createToken(user.dataValues.id)
 res.status(200).json({email:user.dataValues.email,token:token})

@@ -37,5 +37,6 @@ export class NavbarComponent {
  logout(){
   
   this.userservice.setUser({email:"",token:"",error:"",isloading:false})
+  this.router.navigate(['/login'])
  }
 }
