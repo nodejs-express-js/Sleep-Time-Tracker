@@ -3,6 +3,7 @@ const db=require("../models/index")
 const getSleepTimes=async(req,res)=>{
 
 try{
+    console.log(req.id)
 const sleepTimes=await db.sleeptimes.findAll({where:{userid:req.id}})
 res.status(200).json(sleepTimes);
 }

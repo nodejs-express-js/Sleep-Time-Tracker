@@ -1,0 +1,9 @@
+.container{
+    margin: 1rem;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-around;
+}
+.container>div{
+cursor: pointer;
+}

@@ -9,7 +9,6 @@ const sleepTimesMiddleware=async(req,res,next)=>{
         }
         const token=authorization.split(" ")[1];
         const data=jwt.verify(token,process.env.JSON_SECRET_KEY);
-        console.log(data)
         req.id=data.id;
         next()
     }
