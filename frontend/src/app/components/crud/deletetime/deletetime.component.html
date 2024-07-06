@@ -1,0 +1,11 @@
+
+    <div *ngFor="let item of sleeptimes" class="container">
+        <div>
+            <div>{{item.time}}</div>
+            <div>{{item.date}}</div>
+        </div>
+        <div class="material-symbols-outlined delete" (click)="deleteitem(item.id)">
+            delete_forever
+            </div>
+    </div>
+    

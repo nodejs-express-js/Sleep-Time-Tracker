@@ -1,0 +1,16 @@
+<form (submit)="signup()">
+    <div>
+        <label for="name">name</label>
+        <input type="text" name="name" [(ngModel)]="form.name">
+    </div>
+    <div>
+        <label for="email">email</label>
+        <input type="email" name="email" [(ngModel)]="form.email">
+    </div>
+    <div>
+        <label for="current-password">password</label>
+        <input type="password" name="current-password" [(ngModel)]="form.password">
+    </div>
+    <div>{{user.error}}</div>
+    <input type="submit" [disabled]="user.isloading"/>
+</form>

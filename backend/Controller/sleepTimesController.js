@@ -3,7 +3,6 @@ const db=require("../models/index")
 const getSleepTimes=async(req,res)=>{
 
 try{
-    console.log(req.id)
 const sleepTimes=await db.sleeptimes.findAll({where:{userid:req.id}})
 res.status(200).json(sleepTimes);
 }
@@ -19,6 +18,8 @@ function isIsoDate(str) {
 const postSleepTimes=async(req,res)=>{
     try{
         let {time,date}=req.body;
+        console.log(req.id)
+    
         if(!time || !date){
             throw new Error("Invalid sleep time or date")
         }

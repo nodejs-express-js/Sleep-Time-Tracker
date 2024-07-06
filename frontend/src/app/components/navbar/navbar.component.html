@@ -1,0 +1,18 @@
+<div class="container">
+<div class="home" (click)="home()">SLEEP TRACKER</div>
+<div>
+    <div *ngIf='user.token!=="" && user.token!==null && user.token!==undefined;else showloginlinks' >
+        <div>{{user.email}}</div>
+        <div class="logout" (click)="logout()">logout</div>
+    </div>
+    <div>
+        <ng-template #showloginlinks>
+            <div class="login" (click)="login()">login</div>
+            <div class="signup" (click)="signup()">signup</div>
+        </ng-template>
+    </div>
+    
+    
+    
+</div>
+</div>

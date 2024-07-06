@@ -1,0 +1,20 @@
+
+.container{
+display: flex;
+justify-content: space-between;
+}
+.home{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.login{
+    cursor: pointer;
+
+}
+.signup{
+    cursor: pointer;
+
+}
+.logout{
+    cursor: pointer;
+}

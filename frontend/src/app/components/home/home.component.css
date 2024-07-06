@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.container>div{
+    font-size: 1.3rem;
+    padding: 1rem;
+    cursor: pointer;
+}

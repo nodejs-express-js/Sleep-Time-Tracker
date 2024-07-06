@@ -1,0 +1,17 @@
+<div >
+    <div class="container">
+        <div (click)="viewtimes()">View Times</div>
+        <div (click)="addtime()">Add Times</div>
+        <div (click)="deletetimes()">Delete Times</div>
+    </div>
+    
+   <div *ngIf='selected==="viewtimes"'>
+        <app-viewtimes></app-viewtimes>
+   </div>
+   <div *ngIf='selected==="addtime"'>
+        <app-addtime></app-addtime>
+   </div>
+   <div *ngIf='selected==="deletetime"'>
+        <app-deletetime></app-deletetime>
+   </div>   
+</div>

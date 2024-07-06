@@ -1,0 +1,12 @@
+<form (submit)="addTime()">
+    <div>
+        <label for="time"></label>
+        <input type="number" step="0.01" id="time" name="time" [(ngModel)]="sleeptime.time">
+    </div>
+    <div>
+        <label for="date"></label>
+        <input type="date"  id="date" name="date" [(ngModel)]="sleeptime.date">
+    </div>
+    <div>{{error}}</div>
+    <input type="submit">
+</form>

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="home" (click)="home()">Sleep Tracker</div>
+
+    <div *ngIf="!user?.email;else showloggedin">
+        <div class="login" (click)="login()">Login</div>
+        <div class="signup" (click)="signup()">signup</div>
+    </div>
+    <ng-template #showloggedin>
+        <div>
+            <div>{{user.email}}</div>
+            <div class="logout" (click)="logout()">logout</div>
+        </div>
+    </ng-template>
+    
+</div>
