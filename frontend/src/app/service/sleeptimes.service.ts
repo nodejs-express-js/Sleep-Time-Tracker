@@ -29,4 +29,7 @@ export class SleeptimesService {
     const data=this.sleeptimes.value.filter((sleep)=>id!==sleep.id)
     this.sleeptimes.next([...data])
   }
+  clearSleeptimes(){
+    this.sleeptimes.next([])
+  }
 }

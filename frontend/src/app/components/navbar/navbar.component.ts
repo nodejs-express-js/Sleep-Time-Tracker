@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
+import { SleeptimesService } from '../../service/sleeptimes.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
 user={email:"",token:"",error:"",isloading:false}
 
-constructor(private userservice: UserService,private router:Router){
+constructor(private userservice: UserService,private router:Router,private sleeptimeservice:SleeptimesService){
 this.userservice.user$.subscribe(user =>{this.user=user;})
 }
 home(){
@@ -27,6 +28,7 @@ signup(){
 }
 logout(){
   this.userservice.logout();
+  this.sleeptimeservice.clearSleeptimes();
   this.router.navigate(['/login'])
 
 }

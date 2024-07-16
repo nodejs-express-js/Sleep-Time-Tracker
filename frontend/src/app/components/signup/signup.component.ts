@@ -31,7 +31,7 @@ export class SignupComponent {
     this.userservice.setUser({email:"",token:"",error:"",isloading:true})
     try{
       const headers=new HttpHeaders({"Content-Type": "application/json"})
-      this.http.post<SignupType>(environment.signup,{...this.form},{headers})
+     this.http.post<SignupType>(environment.signup,{...this.form},{headers})
       .subscribe({
         next:data=>{
           this.userservice.setUser({email:data.email,token:data.token,error:"",isloading:false})
